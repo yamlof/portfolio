@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Edwin Igbinoba{% endblock %}</title>
+    <link href="static/output.css" rel="stylesheet">
+        <link rel="icon" href="static/icon.png">
+
+    {% endblock %}
+</head>
+
+<nav class="bg-flex items-center flex-wrap p-6">
+
+        <div class="inline-flex list-none justify-center w-full">
+            <a href="{{ url_for('index') }}"><li class="px-8">Home</li></a>
+            <a href="{{ url_for('projects') }}"><li class="px-8">Projects</li></a>
+            <a href="{{ url_for('aboutme') }}"><li class="px-8">About Me</li></a>
+
+        </div>
+
+</nav>
+
+<body class="">
+    {% block body %}
+    <div class="w-full px-3 md:px-0 py-24 md:py-16 space-y-4 grid grid-cols-1 grid-rows-4 ">
+        <div class="flex items-center justify-center ">
+            <img class=" object-scale-down w-40 h-40 rounded-full border" src="static/photo.jpeg" alt="">
+            <h1 class="italic px-14">Edwin Igbinoba</h1>
+        </div>
+        <div class="flex inline-flex items-center justify-center ">
+            <div class="inline-flex">
+                <a target="_blank" href="https://github.com/hhgsx" ><img class="w-12 h-12 " src="static/icons8-github.svg"></a>
+                <a target="_blank" href="https://www.linkedin.com/in/edwin-igbinoba-james/" ><img class="w-12 h-12 " src="static/icons8-linkedin.svg"></a>
+                <a target="_blank" href="https://x.com/yamlof" ><img class="w-12 h-12 " src="static/icons8-twitter.svg"></a>
+            </div>
+
+        </div>
+
+
+    </div>
+    {% endblock %}
+</body>
+</html>
+
