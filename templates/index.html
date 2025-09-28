@@ -7,32 +7,131 @@
 
     <title>{% block title %}Edwin Igbinoba{% endblock %}</title>
 
-    <link href="static/output.css" rel="stylesheet">
-        <link rel="icon" href="static/icon.png">
+    <link href="static/website.css" rel="stylesheet">
+    <link rel="icon" href="static/icon.png">
+
+    <!-- FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     {% endblock %}
+    <style>
+
+        :root {
+            --bg-color : #ffffff;
+            --text-color: #000000;
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: var(--text-color);
+            color: var(--bg-color);
+            transition: 0.3s;
+        }
+
+        nav {
+            position: absolute;
+            background-color: var(--bg-color); 
+            transition: background-color 0.3s ease, color 0.3s ease;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background: var(--bg-color);
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        nav .l {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            margin:0 15px;
+            text-decoration: none;
+            color:var(--text-color);
+            font-weight:bold;
+            transition: color 0.3s ease;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            transition: filter 0.3s ease;
+        }
+
+        body.dark img {
+            filter: invert(1);
+        
+        }
+
+        #theme-toggle {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: var(--text-color);
+            color: var(--bg-color);
+            transition: 0.3s;
+        }
+
+    </style>
 
 </head>
 
-<nav class="">
+<body class="">
+    <nav class="">
 
         <div class="l">
-            <a href="{{ url_for('index') }}"><li class="">Home</li></a>
-            <a href="{{ url_for('projects') }}"><li class="">Projects</li></a>
-            <a href="{{ url_for('aboutme') }}"><li class="">About Me</li></a>
+            <a href="{{ url_for('index') }}" class="space-grotesk-website">Home</a>
+            <a href="{{ url_for('projects') }}" class="space-grotesk-website">Projects</a>
+            <a href="{{ url_for('aboutme') }}" class="space-grotesk-website">About Me</a>
 
         </div>
 
-</nav>
-
-<body class="">
+        <button id="theme-toggle">🌙</button>
+    
+    </nav>
     
     {% block body %}
-    <div class="">
+    <div style="
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:50vh;
+
+    ">
         <div class="">
             <!--- <img class="" src="static/photo.jpeg" alt=""> -->
-            <h1 class="">Edwin Igbinoba</h1>
-            <h3>Software Engineer</h3>
+            <h1 class="space-grotesk-website">Edwin Igbinoba</h1>
+            <h3 class="space-grotesk-website">Software Engineer</h3>
         </div>
 
         <div class="">
@@ -43,9 +142,40 @@
             </div>
         </div>
 
+        <!-- <button onclick="toggleTheme()">Toggle Mode</button> -->
+
+
 
     </div>
+
     {% endblock %}
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body =document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark');
+        }
+
+        const updateButton = () => {
+            toggleButton.textContent = body.classList.contains('dark') ? 'Light' : 'Dark';
+        };
+
+        updateButton()
+
+        toggleButton.addEventListener('click',() => {
+            body.classList.toggle('dark');
+
+            if (body.classList.contains('dark')) {
+                localStorage.setItem('theme','dark');
+            } else {
+                localStorage.setItem('theme','light');
+            }
+
+            updateButton();
+        })
+    </script>
 
 </body>
 </html>

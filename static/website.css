@@ -1,0 +1,13 @@
+.space-grotesk-website {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+  }
+}
