@@ -155,31 +155,35 @@
     {% endblock %}
 
     <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body =document.body;
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
 
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark');
-        }
+  // Apply saved theme
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+  }
 
-        const updateButton = () => {
-            toggleButton.textContent = body.classList.contains('dark') ? 'Light' : 'Dark';
-        };
+  const updateButton = () => {
+    toggleButton.textContent = body.classList.contains('dark') ? 'Light' : 'Dark';
+  };
 
-        updateButton()
+  updateButton();
 
-        toggleButton.addEventListener('click',() => {
-            body.classList.toggle('dark');
+  toggleButton.addEventListener('click', () => {
+    const switchTheme = () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+      updateButton();
+    };
 
-            if (body.classList.contains('dark')) {
-                localStorage.setItem('theme','dark');
-            } else {
-                localStorage.setItem('theme','light');
-            }
-
-            updateButton();
-        })
-    </script>
+    // Use View Transition API if supported
+    if (document.startViewTransition) {
+      document.startViewTransition(switchTheme);
+    } else {
+      switchTheme();
+    }
+  });
+</script>
 
 </body>
 </html>

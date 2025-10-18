@@ -50,3 +50,34 @@ body.dark {
   padding: 2px 6px;
   font-size: 0.9rem;
 }
+
+::view-transition-group(root) {
+  animation-timing-function: var(--expo-in);
+}
+
+::view-transition-new(root) {
+  mask: url('gokupoweringup.gif') center / 0 no-repeat;
+  animation: scale 2.0s ease-in-out both;;
+  animation-fill-mode: both;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: scale 2.0s ease-in-out both;;
+  animation-fill-mode: both;
+}
+
+@keyframes scale {
+  0% {
+    mask-size: 0;
+  }
+  10% {
+    mask-size: 10vmax;
+  }
+  90% {
+    mask-size: 10vmax;
+  }
+  100% {
+    mask-size: 100vmax;
+  }
+}
