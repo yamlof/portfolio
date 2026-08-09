@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDWIN.IGBINOBA</title>
+<meta name="description" content="Edwin Igbinoba — software engineer · BSc CS · University of Liverpool 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="website.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="scanbar" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- CORNER HUD -->
+<div class="hud tl" aria-hidden="true">
+  <div class="hud-line"><span class="tag">[UNIT]</span> <span class="val">YoRHa-01</span></div>
+  <div class="hud-line"><span class="tag">[ID]</span> <span class="val">EDWIN.IGBINOBA</span></div>
+  <div class="hud-line"><span class="tag">[STATE]</span> <span class="state-ok">OPERATIONAL</span></div>
+</div>
+<div class="hud br" aria-hidden="true">
+  <div class="hud-line" id="hud-clock"><span class="val">T // 00:00:00 UTC</span></div>
+  <div class="hud-line"><span class="tag">SIGNAL</span> <span class="signal-bars active"><i></i><i></i><i></i><i></i><i></i></span></div>
+  <div class="hud-line"><span class="tag">v2026.01</span> <span class="val">STABLE</span></div>
+</div>
+
+<!-- BOOT SEQUENCE -->
+<div id="boot" role="dialog" aria-label="System boot">
+  <div class="boot-frame">
+    <div class="boot-head">
+      <span>YoRHa_OS <b>v4.7.1</b></span>
+      <span>NODE // <b>WLV_UK</b></span>
+    </div>
+    <div class="boot-lines" id="boot-lines"></div>
+    <div class="boot-skip">[ CLICK ANYWHERE TO SKIP ]</div>
+  </div>
+</div>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <a href="#" class="nav-logo"><span class="brk">[</span> edwin.dev <span class="brk">]</span></a>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#stack">Stack</a>
+    <a href="#homelab">Homelab</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-status"><span class="status-dot"></span>Open to work</div>
+    <button class="theme-btn" id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark mode">☀</button>
+  </div>
+</nav>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-label="System broadcast">
+  <div class="marquee-track">
+    <span>▸ <b>BROADCAST</b> // EDWIN.IGBINOBA STATUS: <span class="am">OPEN_TO_WORK</span> <span class="sep">//</span> BSc CS · UNIV. OF LIVERPOOL · CLASS OF <b>2026</b> <span class="sep">//</span> STACK: KOTLIN + PYTHON + DOCKER + LINUX <span class="sep">//</span> TRANSMISSION FROM <span class="mg">WLV_UK</span> NODE <span class="sep">//</span> AVAILABLE FOR: BACKEND · ANDROID · FULL-STACK <span class="sep">//</span> ▸ SIG_OK ▸ AUTH_OK ▸ PORTFOLIO_LIVE <span class="sep">//</span> </span>
+    <span>▸ <b>BROADCAST</b> // EDWIN.IGBINOBA STATUS: <span class="am">OPEN_TO_WORK</span> <span class="sep">//</span> BSc CS · UNIV. OF LIVERPOOL · CLASS OF <b>2026</b> <span class="sep">//</span> STACK: KOTLIN + PYTHON + DOCKER + LINUX <span class="sep">//</span> TRANSMISSION FROM <span class="mg">WLV_UK</span> NODE <span class="sep">//</span> AVAILABLE FOR: BACKEND · ANDROID · FULL-STACK <span class="sep">//</span> ▸ SIG_OK ▸ AUTH_OK ▸ PORTFOLIO_LIVE <span class="sep">//</span> </span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- BANNER -->
+  <header class="banner reveal">
+    <div class="banner-inner">
+      <h1 class="banner-name">
+        <span class="glitch" data-text="Edwin">Edwin</span>
+        <span class="glitch" data-text="Igbinoba">Igbinoba</span><span class="dot">.</span>
+      </h1>
+      <div class="banner-id">
+        <div class="row"><span>UNIT</span><b>YoRHa-01</b></div>
+        <div class="row"><span>ROLE</span><b>SWE</b></div>
+        <div class="row"><span>NODE</span><b>LIVERPOOL·UK</b></div>
+        <div class="row"><span>YEAR</span><b>2026</b></div>
+      </div>
+    </div>
+    <div class="banner-tags">
+      <span class="chip cy">Python</span>
+      <span class="chip cy">Kotlin</span>
+      <span class="chip cy">JavaScript</span>
+      <span class="chip cy">C</span>
+      <span class="chip cy">Lua</span>
+      <span class="chip mg">Flask</span>
+      <span class="chip mg">Ktor</span>
+      <span class="chip mg">KMP</span>
+      <span class="chip mg">SpringBoot</span>
+      <span class="chip mg">Tailwind</span>
+      <span class="chip gr">Docker</span>
+      <span class="chip gr">Git</span>
+      <span class="chip gr">Azure</span>
+      <span class="chip gr">Linux</span>
+    </div>
+  </header>
+
+  <!-- DASHBOARD -->
+  <section class="dash">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar-l reveal" aria-label="Profile sidebar">
+
+      <div class="widget">
+        <div class="widget-title">about <b>// 001</b></div>
+        <div class="widget-body">
+          <table class="info-table">
+            <tbody>
+              <tr><td class="info-key">Name</td><td>Edwin Igbinoba</td></tr>
+              <tr><td class="info-key">Node</td><td>Liverpool, UK</td></tr>
+              <tr><td class="info-key">Uni</td><td>Univ. of Liverpool</td></tr>
+              <tr><td class="info-key">Degree</td><td>BSc CS · Software Dev</td></tr>
+              <tr><td class="info-key">Grad</td><td>2026</td></tr>
+              <tr><td class="info-key">Status</td><td style="color:var(--green)">Open to work</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">currently <b>// 002</b></div>
+        <div class="widget-body">
+          <div class="status-list">
+            <div class="row"><span class="d"></span><span class="lbl">Live</span><span class="val">Yomu</span></div>
+            <div class="row act"><span class="d"></span><span class="lbl">Building</span><span class="val">Dualocke</span></div>
+            <div class="row lrn"><span class="d"></span><span class="lbl">Learning</span><span class="val">Azure · Lua</span></div>
+            <div class="row"><span class="d"></span><span class="lbl">Reading</span><span class="val" id="now-reading-side">—</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">modules <b>// 003</b></div>
+        <div class="widget-body">
+          <div class="chips">
+            <span class="chip">Cloud Computing</span>
+            <span class="chip">HPC</span>
+            <span class="chip">Image Processing</span>
+            <span class="chip">Data Mining</span>
+            <span class="chip">Software Dev</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">interests <b>// 004</b></div>
+        <div class="widget-body">
+          <div class="chips">
+            <span class="chip cy">Android</span>
+            <span class="chip cy">Backend</span>
+            <span class="chip mg">Self-hosting</span>
+            <span class="chip mg">Homelab</span>
+            <span class="chip gr">Manga readers</span>
+            <span class="chip gr">Pokémon Nuzlockes</span>
+            <span class="chip am">Linux</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <!-- intro post -->
+      <article class="post reveal">
+        <div class="post-head">
+          <span class="post-date"><span class="cy">▸</span> LAST UPDATE: <b>2026.07.28</b></span>
+          <h2 class="post-title">~ intro / dossier ~</h2>
+        </div>
+        <div class="post-body">
+          <div class="intro-hi">▸ hey — i'm edwin.</div>
+          <p>
+            I build <strong>Android apps</strong>, <strong>backend systems</strong>, and developer tools — with a taste for clean architecture and things that actually ship. Currently finishing my BSc in Computer Science at the <strong>University of Liverpool</strong>, graduating <strong>2026</strong> with a specialism in Software Development.
+          </p>
+          <p>
+            My projects sit at the intersection of things I actually care about — <strong>manga readers</strong>, competitive gaming platforms, self-hosted infrastructure. I like building systems with real users, even if that user is just me at first.
+          </p>
+          <div class="callout">
+            <b>▸ Currently:</b> Actively looking for my first full-time engineering role — backend, Android, or anywhere I can ship real things.
+          </div>
+        </div>
+        <div class="post-ftr">
+          <span class="post-tag">software engineer</span>
+          <span class="post-tag">android</span>
+          <span class="post-tag">backend</span>
+          <span class="post-tag">self-hosted</span>
+          <span class="post-tag">manga</span>
+          <span class="post-tag">homelab</span>
+          <span class="post-tag">open to work</span>
+        </div>
+      </article>
+
+      <!-- projects post -->
+      <article class="post reveal" id="projects">
+        <div class="post-head">
+          <span class="post-date"><span class="cy">▸</span> OPERATIONS_LOG · <b>4 FILES</b></span>
+          <h2 class="post-title">~ projects ~</h2>
+        </div>
+        <div class="post-body">
+          <div class="proj-grid">
+
+            <a href="https://github.com/yamlof/Yomu" target="_blank" rel="noopener noreferrer" class="proj-card feat">
+              <div class="proj-head">
+                <span><span class="fid">FILE_001</span> · FEATURED</span>
+                <span class="st"><i></i>LIVE</span>
+              </div>
+              <div class="proj-name">Yomu</div>
+              <div class="proj-sub">Android Manga Reader · Kotlin + Flask</div>
+              <div class="proj-desc">Android app built in Kotlin for browsing and reading manga with a smooth UI. Paired with a custom Flask backend for real-time chapter and image retrieval.</div>
+              <div class="proj-tags">
+                <span class="tg">Kotlin</span><span class="tg">Flask</span><span class="tg">Android</span><span class="tg">REST</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/yamlof/Dualocke" target="_blank" rel="noopener noreferrer" class="proj-card act">
+              <div class="proj-head">
+                <span><span class="fid mg">FILE_002</span> · ACTIVE_DEV</span>
+                <span class="st act"><i></i>ONGOING</span>
+              </div>
+              <div class="proj-name">Dualocke League</div>
+              <div class="proj-sub">Nuzlocke Platform · KMP + Ktor</div>
+              <div class="proj-desc">Cross-platform Pokémon Nuzlocke platform. Lua scripting into mGBA for live game-state extraction, ELO matchmaking, PostgreSQL-backed league system.</div>
+              <div class="proj-tags">
+                <span class="tg">KMP</span><span class="tg">Ktor</span><span class="tg">Lua</span><span class="tg">Postgres</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/yamlof/manga-sp" target="_blank" rel="noopener noreferrer" class="proj-card">
+              <div class="proj-head">
+                <span><span class="fid">FILE_003</span> · ARCHIVED</span>
+                <span class="st"><i></i>STABLE</span>
+              </div>
+              <div class="proj-name">Manga Scraper</div>
+              <div class="proj-sub">CLI · Python · PyPI (WIP)</div>
+              <div class="proj-desc">CLI tool that automates manga image downloads using BeautifulSoup and Requests. Minimal setup, PyPI packaging in progress.</div>
+              <div class="proj-tags">
+                <span class="tg">Python</span><span class="tg">BS4</span><span class="tg">CLI</span>
+              </div>
+            </a>
+
+            <a href="#homelab" class="proj-card">
+              <div class="proj-head">
+                <span><span class="fid">FILE_004</span> · INFRASTRUCTURE</span>
+                <span class="st"><i></i>UP 99.4%</span>
+              </div>
+              <div class="proj-name">Home Lab</div>
+              <div class="proj-sub">Fedora Server · Self-hosted</div>
+              <div class="proj-desc">Production-grade Dockerized services on Fedora — Plex, secure remote access, automated backups, container orchestration.</div>
+              <div class="proj-tags">
+                <span class="tg">Fedora</span><span class="tg">Docker</span><span class="tg">Plex</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+        <div class="post-ftr">
+          <span class="post-tag">projects</span>
+          <span class="post-tag">open source</span>
+          <span class="post-tag">kotlin</span>
+          <span class="post-tag">python</span>
+          <span class="post-tag">android</span>
+        </div>
+      </article>
+
+      <!-- stack post -->
+      <article class="post reveal" id="stack">
+        <div class="post-head">
+          <span class="post-date"><span class="cy">▸</span> SYSTEM_LOADOUT · <b>4 MODULES</b></span>
+          <h2 class="post-title">~ tech stack ~</h2>
+        </div>
+        <div class="post-body">
+
+          <div class="stack-group">
+            <span class="stack-lbl">languages <b>// M.001</b></span>
+            <div class="chips">
+              <span class="chip cy">Python</span>
+              <span class="chip cy">Kotlin</span>
+              <span class="chip cy">JavaScript</span>
+              <span class="chip">HTML / CSS</span>
+              <span class="chip">C</span>
+              <span class="chip am">Lua (learning)</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <span class="stack-lbl">frameworks &amp; backend <b>// M.002</b></span>
+            <div class="chips">
+              <span class="chip cy">Flask</span>
+              <span class="chip cy">Ktor</span>
+              <span class="chip">KMP</span>
+              <span class="chip">SpringBoot</span>
+              <span class="chip">Tailwind</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <span class="stack-lbl">ops &amp; tooling <b>// M.003</b></span>
+            <div class="chips">
+              <span class="chip gr">Git / GitHub</span>
+              <span class="chip gr">Docker</span>
+              <span class="chip gr">Linux / CLI</span>
+              <span class="chip">Cloudflare</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <span class="stack-lbl">cloud &amp; infra <b>// M.004</b></span>
+            <div class="chips">
+              <span class="chip am">Azure (learning)</span>
+              <span class="chip">Cloudflare</span>
+              <span class="chip">Fedora Server</span>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- homelab post -->
+      <article class="post reveal" id="homelab">
+        <div class="post-head">
+          <span class="post-date"><span class="cy">▸</span> INFRASTRUCTURE · <b>SELF-HOSTED</b></span>
+          <h2 class="post-title">~ home lab ~</h2>
+        </div>
+        <div class="post-body">
+          <p>
+            Fedora Server homelab hosting production-grade Dockerized services — <strong>Plex Media Server</strong> with secure remote access, automated backups, and full container orchestration. Hands-on Linux admin, networking, and DevOps experience built from the ground up.
+          </p>
+          <div class="hlab-grid">
+            <div class="hlab-item"><span class="d"></span>Fedora Server</div>
+            <div class="hlab-item"><span class="d"></span>Docker / Compose</div>
+            <div class="hlab-item"><span class="d"></span>Plex Media Server</div>
+            <div class="hlab-item"><span class="d"></span>Monitoring &amp; Uptime</div>
+          </div>
+        </div>
+        <div class="post-ftr">
+          <span class="post-tag">infrastructure</span>
+          <span class="post-tag">devops</span>
+          <span class="post-tag">docker</span>
+          <span class="post-tag">linux</span>
+        </div>
+      </article>
+
+      <!-- contact post -->
+      <article class="post reveal" id="contact">
+        <div class="post-head">
+          <span class="post-date"><span class="cy">▸</span> COMMS_CHANNELS · <b>OPEN</b></span>
+          <h2 class="post-title">~ get in touch ~</h2>
+        </div>
+        <div class="post-body">
+          <p>
+            Actively looking for my first engineering role. Happy to chat about jobs, projects, or anything interesting.
+          </p>
+          <div class="chn-list">
+            <a href="https://www.linkedin.com/in/edwin-igbinoba-james/" target="_blank" rel="noopener noreferrer" class="chn">
+              <div class="chn-l">
+                <div class="chn-ico">in</div>
+                <div class="chn-t"><b>LinkedIn</b><span>Edwin Igbinoba · CH.01</span></div>
+              </div>
+              <span class="chn-arr">↗</span>
+            </a>
+            <a href="https://github.com/yamlof" target="_blank" rel="noopener noreferrer" class="chn">
+              <div class="chn-l">
+                <div class="chn-ico">⎔</div>
+                <div class="chn-t"><b>GitHub</b><span>@yamlof · CH.02</span></div>
+              </div>
+              <span class="chn-arr">↗</span>
+            </a>
+            <a href="https://edwinigbinoba.com/" target="_blank" rel="noopener noreferrer" class="chn">
+              <div class="chn-l">
+                <div class="chn-ico">◈</div>
+                <div class="chn-t"><b>edwinigbinoba.com</b><span>primary domain · CH.03</span></div>
+              </div>
+              <span class="chn-arr">↗</span>
+            </a>
+            <a href="#" class="chn">
+              <div class="chn-l">
+                <div class="chn-ico">▤</div>
+                <div class="chn-t"><b>Download CV</b><span>PDF · latest · CH.04</span></div>
+              </div>
+              <span class="chn-arr">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar-r reveal" aria-label="Status sidebar">
+
+      <div class="widget">
+        <div class="widget-title">socials <b>// CH</b></div>
+        <div class="widget-body">
+          <div class="social-list">
+            <a href="https://github.com/yamlof" target="_blank" rel="noopener noreferrer" class="social-link">
+              <strong>GitHub</strong> <span>@yamlof</span>
+            </a>
+            <a href="https://www.linkedin.com/in/edwin-igbinoba-james/" target="_blank" rel="noopener noreferrer" class="social-link">
+              <strong>LinkedIn</strong> <span>edwin-igbinoba</span>
+            </a>
+            <a href="https://edwinigbinoba.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+              <strong>Website</strong> <span>edwinigbinoba.com</span>
+            </a>
+            <a href="https://anilist.co/user/YOUR_ANILIST_USERNAME" target="_blank" rel="noopener noreferrer" class="social-link" id="anilist-profile-link">
+              <strong>AniList</strong> <span id="anilist-user-side">—</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="now-title">Last project shipped</div>
+        <div class="now-line"><span class="cy">▸</span> Yomu</div>
+      </div>
+
+      <div class="widget">
+        <div class="now-title">Currently building</div>
+        <div class="now-line"><span class="cy">▸</span> Dualocke</div>
+      </div>
+
+      <div class="widget">
+        <div class="now-title">Currently learning</div>
+        <div class="now-line"><span class="cy">▸</span> Azure</div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">reading log <b>// live</b></div>
+        <div class="widget-body">
+          <div class="reading-grid" id="reading-grid">
+            <div class="reading-empty" id="reading-loading">FETCHING<span class="boot-cursor" style="width:5px;height:9px"></span></div>
+          </div>
+          <div class="reading-ftr">
+            <span id="stat-anime">-- ANIME</span>
+            <span id="stat-manga" class="cy">-- MANGA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">hits <b>// counter</b></div>
+        <div class="hits-body">
+          <div class="hit-num" id="hit-num">000247</div>
+          <div class="hit-lbl">visitors // ok</div>
+        </div>
+      </div>
+
+    </aside>
+
+  </section>
+
+  <footer>
+    <span><span class="cy">[</span> BUILT BY <span class="cy">EDWIN IGBINOBA</span> <span class="sep">//</span> 2026 <span class="cy">]</span></span>
+    <span>END_OF_TRANSMISSION <span class="cy">▸</span></span>
+  </footer>
+
+</div>
+
+<script>
+// ==================== BOOT SEQUENCE ====================
+(function boot(){
+  const skipKey = 'boot-seen-v2';
+  const bootEl = document.getElementById('boot');
+  const linesEl = document.getElementById('boot-lines');
+
+  if(sessionStorage.getItem(skipKey)){
+    bootEl.classList.add('done');
+    bootEl.remove();
+    return;
+  }
+
+  const seq = [
+    ['> BOOT_SEQ INIT ..................... ', 'OK', 'ok'],
+    ['> LOAD /yorha/ui/dashboard.mod ...... ', 'OK', 'ok'],
+    ['> HANDSHAKE: WLV_UK -> CLIENT ....... ', 'OK', 'ok'],
+    ['> AUTH: EDWIN.IGBINOBA ............. ', 'GRANTED', 'ok'],
+    ['> STACK: KOTLIN | PYTHON | DOCKER ... ', 'READY', 'ok'],
+    ['> RENDER PORTFOLIO_STACK ........... ', 'ENGAGE', 'acc'],
+    ['', '', ''],
+    ['ACCESS GRANTED. WELCOME.', '', 'acc']
+  ];
+
+  let i = 0;
+  function nextLine(){
+    if(i >= seq.length){ setTimeout(finish, 300); return; }
+    const [text, tag, cls] = seq[i];
+    const line = document.createElement('div');
+    line.className = 'boot-line show';
+    if(tag){ line.innerHTML = text + '<span class="' + cls + '">' + tag + '</span>'; }
+    else if(text){ line.innerHTML = '<span class="' + cls + '">' + text + '</span>'; }
+    else { line.innerHTML = '&nbsp;'; }
+    linesEl.appendChild(line);
+    i++;
+    setTimeout(nextLine, 120 + Math.random()*70);
+  }
+
+  function finish(){
+    bootEl.classList.add('done');
+    sessionStorage.setItem(skipKey, '1');
+    setTimeout(() => bootEl.remove(), 900);
+  }
+
+  bootEl.addEventListener('click', finish, {once:true});
+  setTimeout(nextLine, 180);
+})();
+
+// ==================== LIVE CLOCK ====================
+(function clock(){
+  const el = document.getElementById('hud-clock');
+  function tick(){
+    const d = new Date();
+    const h = String(d.getUTCHours()).padStart(2,'0');
+    const m = String(d.getUTCMinutes()).padStart(2,'0');
+    const s = String(d.getUTCSeconds()).padStart(2,'0');
+    el.innerHTML = '<span class="tag">T</span> <span class="val">'+h+':'+m+':'+s+'</span> <span class="tag">UTC</span>';
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+// ==================== SCROLL REVEAL ====================
+(function reveal(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, {threshold:0.06});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+})();
+
+// ==================== HIT COUNTER (demo — replace with real service) ====================
+(function hits(){
+  const base = 247;
+  const bumpKey = 'hit-bump';
+  let bump = parseInt(localStorage.getItem(bumpKey) || '0', 10);
+  if(!sessionStorage.getItem('hit-counted')){
+    bump += 1;
+    localStorage.setItem(bumpKey, String(bump));
+    sessionStorage.setItem('hit-counted', '1');
+  }
+  const total = base + bump;
+  document.getElementById('hit-num').textContent = String(total).padStart(6, '0');
+})();
+
+// ==================== ANILIST FETCH (unchanged core logic) ====================
+const ANILIST_USER = 'YOUR_ANILIST_USERNAME';
+
+function renderReading(entries) {
+  const grid = document.getElementById('reading-grid');
+  grid.innerHTML = '';
+  const slice = entries.slice(0, 6);
+  slice.forEach(entry => {
+    const m = entry.media;
+    const title = m.title.english || m.title.romaji;
+    const img = m.coverImage.large || m.coverImage.medium;
+    const url = m.siteUrl;
+    const progress = entry.progress;
+    grid.innerHTML += `
+      <a href="${url}" target="_blank" rel="noopener noreferrer" class="reading-tile" title="${title}">
+        <img src="${img}" alt="${title}" loading="lazy">
+        ${progress ? `<span class="rprog">CH.${progress}</span>` : ''}
+      </a>`;
+  });
+  if (slice[0]) {
+    const nowEl = document.getElementById('now-reading-side');
+    if (nowEl) nowEl.textContent = (slice[0].media.title.english || slice[0].media.title.romaji).slice(0, 22);
+  }
+}
+
+async function fetchAniList() {
+  const query = `
+    query($name: String) {
+      User(name: $name) {
+        name
+        siteUrl
+        statistics {
+          anime { count }
+          manga { count }
+        }
+      }
+      MediaListCollection(userName: $name, type: MANGA, status: CURRENT, sort: UPDATED_TIME_DESC) {
+        lists {
+          entries {
+            progress
+            score
+            media {
+              title { romaji english }
+              coverImage { large medium }
+              siteUrl
+            }
+          }
+        }
+      }
+    }`;
+
+  try {
+    const res = await fetch('https://graphql.anilist.co', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ query, variables: { name: "yamlof" } })
+    });
+    const { data } = await res.json();
+
+    const profileLink = document.getElementById('anilist-profile-link');
+    if (data.User) {
+      profileLink.href = data.User.siteUrl;
+      document.getElementById('anilist-user-side').textContent = data.User.name;
+      document.getElementById('stat-anime').textContent = data.User.statistics.anime.count + ' ANIME';
+      document.getElementById('stat-manga').textContent = data.User.statistics.manga.count + ' MANGA';
+    }
+
+    const entries = data.MediaListCollection.lists.flatMap(l => l.entries);
+    if (entries.length > 0) {
+      renderReading(entries);
+    } else {
+      document.getElementById('reading-grid').innerHTML =
+        '<div class="reading-empty">NO_ACTIVE_ENTRIES</div>';
+    }
+  } catch (err) {
+    document.getElementById('reading-grid').innerHTML =
+      '<div class="reading-empty" style="color:var(--danger)">ERR_ANILIST_UNREACHABLE</div>';
+  }
+}
+
+fetchAniList();
+
+// ==================== THEME TOGGLE ====================
+const html = document.documentElement;
+const themeBtn = document.getElementById('theme-toggle');
+let isLight = false;
+
+function toggleTheme() {
+  isLight = !isLight;
+  html.classList.toggle('light', isLight);
+  themeBtn.textContent = isLight ? '☾' : '☀';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+themeBtn.addEventListener('click', () => {
+  const r = themeBtn.getBoundingClientRect();
+  document.documentElement.style.setProperty('--cx', (r.left + r.width/2) + 'px');
+  document.documentElement.style.setProperty('--cy', (r.top + r.height/2) + 'px');
+  if (!document.startViewTransition) { toggleTheme(); return; }
+  document.startViewTransition(() => toggleTheme());
+});
+
+if (localStorage.getItem('theme') === 'light') {
+  isLight = true;
+  html.classList.add('light');
+  themeBtn.textContent = '☾';
+}
+</script>
+</body>
+</html>
